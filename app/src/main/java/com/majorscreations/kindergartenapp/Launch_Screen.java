@@ -27,13 +27,13 @@ public class Launch_Screen extends AppCompatActivity {
         submitNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
+
                 startActivity(new Intent(Launch_Screen.this, login.class));
 
-=======
+
                 finish();
                 startActivity(new Intent(Launch_Screen.this, login.class));
->>>>>>> 347d674c9fcc03cfb8bb58cf6b5a246f35afb92e
+
 
             }
         });
@@ -42,11 +42,11 @@ public class Launch_Screen extends AppCompatActivity {
         submitReturningUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
 
-=======
+
+
                 finish();
->>>>>>> 347d674c9fcc03cfb8bb58cf6b5a246f35afb92e
+
                 startActivity(new Intent(Launch_Screen.this, login.class));
 
             }

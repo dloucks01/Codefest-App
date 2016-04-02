@@ -19,15 +19,13 @@
             android:name=".Launch_Screen"
             android:label="@string/title_activity_launch__screen"
             android:theme="@style/AppTheme.NoActionBar" />
-<<<<<<< HEAD
-        <activity android:name=".SplashActivity" />
-        <activity android:name=".Topics" />
-<<<<<<< HEAD
+
+
+
         <activity android:name=".Instructions"></activity>
-=======
-        <activity android:name=".MathQuestionActivity"></activity>
->>>>>>> 585e5a5e0cf8cc174913bc9e9b904fd9581e24c0
-=======
+
+
+
 
         <activity android:name=".SplashActivity" >
             <intent-filter>
@@ -40,7 +38,7 @@
 
         <activity android:name=".MathQuestionActivity"></activity>
 
->>>>>>> 347d674c9fcc03cfb8bb58cf6b5a246f35afb92e
+
     </application>
 
 </manifest>

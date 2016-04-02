@@ -1,9 +1,151 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.majorscreations.kindergartenapp.MatchNumberToGroupFragment">
+    tools:context="com.majorscreations.kindergartenapp.MatchNumberToGroupFragment"
+    android:rowCount="200"
+    android:columnCount="200">
 
     <!-- TODO: Update blank fragment layout -->
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:id="@+id/number1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp"
+        android:textSize="40dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:id="@+id/number2"
+        android:layout_marginTop="21dp"
+        android:textSize="40dp"
+        android:layout_below="@+id/number1"
+        android:layout_alignLeft="@+id/number1"
+        android:layout_alignStart="@+id/number1"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:id="@+id/number3"
+        android:layout_marginTop="23dp"
+        android:textSize="40dp"
+        android:layout_below="@+id/number2"
+        android:layout_alignLeft="@+id/number2"
+        android:layout_alignStart="@+id/number2"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:id="@+id/number4"
+        android:layout_marginTop="20dp"
+        android:textSize="40dp"
+        android:layout_below="@+id/number3"
+        android:layout_alignLeft="@+id/number3"
+        android:layout_alignStart="@+id/number3"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:id="@+id/number5"
+        android:layout_marginTop="24dp"
+        android:textSize="40dp"
+        android:layout_below="@+id/number4"
+        android:layout_alignLeft="@+id/number4"
+        android:layout_alignStart="@+id/number4"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Click a number then click its matching Object"
+        android:id="@+id/textView4"
+        android:textAlignment="center"
+        android:clickable="true"
+        android:layout_span="5"
+        android:textSize="@dimen/small_text"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageButton4"
+        android:src="@mipmap/fourbugs"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/textView4"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4"
+        android:background="#ffffff"
+        android:clickable="true" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageButton2"
+        android:src="@mipmap/twobugs"
+        android:scaleType="fitCenter"
+        android:layout_alignTop="@+id/number2"
+        android:layout_alignLeft="@+id/imageButton4"
+        android:layout_alignStart="@+id/imageButton4"
+        android:background="#ffffff"
+        android:clickable="true" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageButton3"
+        android:src="@mipmap/threebugs"
+        android:scaleType="fitCenter"
+        android:layout_alignTop="@+id/number3"
+        android:layout_alignLeft="@+id/imageButton2"
+        android:layout_alignStart="@+id/imageButton2"
+        android:background="#ffffff"
+        android:clickable="true" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageButton5"
+        android:src="@mipmap/fivebugs"
+        android:scaleType="fitCenter"
+        android:background="#ffffff"
+        android:layout_above="@+id/imageButton1"
+        android:layout_alignLeft="@+id/imageButton3"
+        android:layout_alignStart="@+id/imageButton3"
+        android:clickable="true" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageButton1"
+        android:src="@mipmap/onebug"
+        android:scaleType="fitCenter"
+        android:background="#ffffff"
+        android:layout_alignTop="@+id/number5"
+        android:layout_alignLeft="@+id/imageButton5"
+        android:layout_alignStart="@+id/imageButton5"
+        android:layout_marginTop="14dp"
+        android:clickable="true" />
+</RelativeLayout>
