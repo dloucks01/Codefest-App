@@ -15,25 +15,25 @@ public class Launch_Screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch__screen);
 
-
         final TextView newUser = (TextView)findViewById(R.id.newUser);
-
 
         final TextView returningUser = (TextView)findViewById(R.id.returningUser);
 
-
         final EditText newUserName = (EditText)findViewById(R.id.newUserName);
 
-
         final EditText returningUserEmail = (EditText)findViewById(R.id.returningUserEmail);
-
 
         final Button submitNewUser = (Button)findViewById(R.id.submitNewUser);
         submitNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                startActivity(new Intent(Launch_Screen.this, login.class));
+
+
                 finish();
                 startActivity(new Intent(Launch_Screen.this, login.class));
+
 
             }
         });
@@ -42,7 +42,11 @@ public class Launch_Screen extends AppCompatActivity {
         submitReturningUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 finish();
+
                 startActivity(new Intent(Launch_Screen.this, login.class));
 
             }
@@ -52,13 +56,9 @@ public class Launch_Screen extends AppCompatActivity {
         newuser_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(
-                //startActivity(new Intent(Launch_Screen.this, StartActivity));
 
                 newUser.setVisibility(View.VISIBLE);
-
                 newUserName.setVisibility(View.VISIBLE);
-
                 submitNewUser.setVisibility(View.VISIBLE);
             }
         });
@@ -68,11 +68,8 @@ public class Launch_Screen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //startActivity(new Intent(Launch_Screen.this, Login));
                 returningUser.setVisibility(View.VISIBLE);
-
                 returningUserEmail.setVisibility(View.VISIBLE);
-
                 submitReturningUser.setVisibility(View.VISIBLE);
             }
         });

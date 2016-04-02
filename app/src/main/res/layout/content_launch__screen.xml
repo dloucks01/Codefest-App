@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
 
     tools:context="com.majorscreations.kindergartenapp.Launch_Screen"
-    android:background="#bdbdbd">
+    android:background="#e4e3e3">
 
     <TextView
         android:layout_width="wrap_content"
@@ -103,4 +103,15 @@
         android:layout_alignLeft="@+id/submitNewUser"
         android:layout_alignStart="@+id/submitNewUser"
         android:visibility="invisible" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:id="@+id/editText"
+        android:background="#020202"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
+
 </RelativeLayout>

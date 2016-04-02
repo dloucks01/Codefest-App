@@ -20,6 +20,13 @@
             android:label="@string/title_activity_launch__screen"
             android:theme="@style/AppTheme.NoActionBar" />
 
+
+
+        <activity android:name=".Instructions"></activity>
+
+
+
+
         <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +37,7 @@
         <activity android:name=".Topics"></activity>
 
         <activity android:name=".MathQuestionActivity"></activity>
+
 
     </application>
 
