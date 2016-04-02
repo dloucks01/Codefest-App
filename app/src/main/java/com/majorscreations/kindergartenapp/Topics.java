@@ -12,7 +12,8 @@ import android.widget.ImageView;
 
 public class Topics extends AppCompatActivity {
 
-    Integer[] Choices = {R.mipmap.math};
+    Integer[] Choices = {R.mipmap.math, R.mipmap.social, R.mipmap.language, R.mipmap.development
+    , R.mipmap.learning};
     ImageView pic;
 
     @Override
@@ -29,6 +30,21 @@ public class Topics extends AppCompatActivity {
                 //switch based on location to open each activity.
                 switch (position) {
                     case 0:
+
+                        break;
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
 
                         break;
                 }
