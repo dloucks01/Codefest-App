@@ -16,4 +16,5 @@
         <item>Social/Emotional</item>
         <item>Physical Development</item>
     </array>
+    <string name="title_activity_launch__screen">Launch_Screen</string>
 </resources>
