@@ -1,6 +1,7 @@
 package com.majorscreations.kindergartenapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +31,8 @@ public class Topics extends AppCompatActivity {
                 //switch based on location to open each activity.
                 switch (position) {
                     case 0:
-
+                        //Call Mathematics, right now call output
+                        startActivity(new Intent(Topics.this, OutputActivity.class));
                         break;
                     case 1:
 
