@@ -118,6 +118,9 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
                     editor.putInt("key6", wrong);
                     editor.putInt("key7", total);
                     editor.commit();
+
+                    Intent intent = new Intent(getActivity(), OutputActivity.class);
+                    startActivity(intent);
                     Log.i(getClass().getSimpleName(), "Incorrect");
                 }
             }

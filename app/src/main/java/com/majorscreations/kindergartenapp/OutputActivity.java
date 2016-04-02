@@ -1,5 +1,8 @@
 package com.majorscreations.kindergartenapp;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,11 +14,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class OutputActivity extends AppCompatActivity {
 
@@ -54,6 +59,51 @@ public class OutputActivity extends AppCompatActivity {
 
         pName.setText(parent_Name);
         cName.setText(child_Name);
+
+        categoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                switch(position)
+                {
+                    case 0:
+                        Toast toast = Toast.makeText(OutputActivity.this, "Gets into statement", Toast.LENGTH_SHORT);
+                        toast.show();
+                        break;
+                    case 1:
+                        Toast toast1 = Toast.makeText(OutputActivity.this, "Gets into statement", Toast.LENGTH_SHORT);
+                        toast1.show();
+                        break;
+                    case 2:
+                        Toast toast2= Toast.makeText(OutputActivity.this, "Gets into statement", Toast.LENGTH_SHORT);
+                        toast2.show();
+                        String [] results = {"Answers Correct: " + Correct, "Answer Incorrect: " + Incorrect};
+
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(OutputActivity.this);
+                        builder.setTitle("Mathematics");
+                        builder.setItems(results, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                switch (which) {
+                                    case 0:
+                                        break;
+                                    case 1:
+                                        break;
+                                }
+                            }
+                        });
+                        builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+
+                                    }
+                                });
+                        builder.create();
+                        builder.show();
+
+                        break;
+                }
+            }
+        });
 
 
 
