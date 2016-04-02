@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MathQuestionActivity extends AppCompatActivity {
-<<<<<<< HEAD
+
     int total, right, wrong;
-=======
+
     // List of fragments handled for this app
 
     ArrangeNumbersOneToFiveFragment arrangeGameFragment;
->>>>>>> 72e23ea774b427bcba946b4d06f056aeef7cd9ea
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

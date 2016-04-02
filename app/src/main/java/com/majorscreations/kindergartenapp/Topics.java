@@ -32,7 +32,7 @@ public class Topics extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         //Call Mathematics, right now call output
-                        startActivity(new Intent(Topics.this, OutputActivity.class));
+                        startActivity(new Intent(Topics.this, MathQuestionActivity.class));
                         break;
                     case 1:
 

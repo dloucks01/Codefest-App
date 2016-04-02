@@ -18,15 +18,15 @@
     </array>
     <string name="fragmentArrangeNumberInstruction">Touch numbers in order from 1 to 5</string>
     <string name="title_activity_launch__screen">Launch_Screen</string>
-<<<<<<< HEAD
+
 
     <string name="Dob">Date of birth</string>
     <string name="parentsName">Parents Name:</string>
     <string name="parentName">Parents Name</string>
-=======
+
     <string name="title_activity_math_questions">MathQuestionsActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
->>>>>>> 72e23ea774b427bcba946b4d06f056aeef7cd9ea
+
 </resources>
