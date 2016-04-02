@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">KindergartenThings</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_output">OutputActivity</string>
+    <string name="childs_name">[ChildsName]</string>
+    <string name="dob">[ChildDOB]</string>
+    <string name="parents_name">[ParentsName]</string>
+    <array name="categories">
+        <item>Expressive and Respective Languages</item>
+        <item>Approach to Learning Cognition</item>
+        <item>Mathematics</item>
+        <item>Social/Emotional</item>
+        <item>Physical Development</item>
+    </array>
+</resources>
