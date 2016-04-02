@@ -44,13 +44,16 @@ public class OutputActivity extends AppCompatActivity {
         final String parent_Name = sharedPref.getString("key4", "Nope");
         final String child_Name = sharedPref.getString("key2", "Nope");
         final String Date_of_Birth = sharedPref.getString("key3","Nope");
+        final Integer Correct = sharedPref.getInt("key5", 0);
+        final Integer Incorrect = sharedPref.getInt("key6", 0);
+
 
         TextView pName = (TextView)findViewById(R.id.parentNameTextView);
         TextView cName = (TextView)findViewById(R.id.childsNameTextView);
         TextView dobName = (TextView)findViewById(R.id.editTextdob);
 
         pName.setText(parent_Name);
-        cName.setText(child_Name + "'s Results");
+        cName.setText(child_Name);
 
 
 
