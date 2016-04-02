@@ -1,16 +1,13 @@
 package com.majorscreations.kindergartenapp;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -28,11 +25,18 @@ public class MatchNumberToGroupFragment extends Fragment {
     final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
 
-    private TextView number1;               // The five numbers that will be clicked.
+    private TextView number1;       // The five numbers that will be clicked.
     private TextView number2;
     private TextView number3;
     private TextView number4;
     private TextView number5;
+
+
+    private ImageButton image1;     // The five images that will be clicked
+    private ImageButton image2;
+    private ImageButton image3;
+    private ImageButton image4;
+    private ImageButton image5;
 
 
     public View onCreateView(LayoutInflater inflater,
@@ -58,45 +62,54 @@ public class MatchNumberToGroupFragment extends Fragment {
         number5.setOnClickListener(new NumbersClickListener());
 
 
-        final ImageButton imageButton1 = (ImageButton)fragmentView.findViewById(R.id.imageButton1);
-        imageButton1.setOnClickListener(new View.OnClickListener() {
+        final ImageButton image1 = (ImageButton)fragmentView.findViewById(R.id.imageButton1);
+        image1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        final ImageButton imageButton2 = (ImageButton)fragmentView.findViewById(R.id.imageButton2);
-        imageButton2.setOnClickListener(new View.OnClickListener() {
+        final ImageButton image2 = (ImageButton)fragmentView.findViewById(R.id.imageButton2);
+        image2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        final ImageButton imageButton3 = (ImageButton)fragmentView.findViewById(R.id.imageButton3);
-        imageButton3.setOnClickListener(new View.OnClickListener() {
+        final ImageButton image3 = (ImageButton)fragmentView.findViewById(R.id.imageButton3);
+        image3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        final ImageButton imageButton4 = (ImageButton)fragmentView.findViewById(R.id.imageButton4);
-        imageButton4.setOnClickListener(new View.OnClickListener() {
+        final ImageButton image4 = (ImageButton)fragmentView.findViewById(R.id.imageButton4);
+        image4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        final ImageButton imageButton5 = (ImageButton)fragmentView.findViewById(R.id.imageButton5);
-        imageButton5.setOnClickListener(new View.OnClickListener() {
+        final ImageButton image5 = (ImageButton)fragmentView.findViewById(R.id.imageButton5);
+        image5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
+
+
+        // Set click listeners
+        image1.setOnClickListener(new NumbersClickListener());
+        image2.setOnClickListener(new NumbersClickListener());
+        image3.setOnClickListener(new NumbersClickListener());
+        image4.setOnClickListener(new NumbersClickListener());
+        image5.setOnClickListener(new NumbersClickListener());
+
 
 
         clicked = new ArrayList<Integer>();
