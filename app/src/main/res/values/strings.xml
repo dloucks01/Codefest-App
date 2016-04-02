@@ -2,7 +2,7 @@
     <string name="app_name">KindergartenThings</string>
     <string name="action_settings">Settings</string>
     <string name="loginTitle">Login</string>
-    <string name="txtName">Name:</string>
+    <string name="txtName">Child\'s Name:</string>
     <string name="txtEmail">Email:</string>
     <string name="btnLogin">Login</string>
     <string name="title_activity_output">OutputActivity</string>
@@ -17,4 +17,8 @@
         <item>Physical Development</item>
     </array>
     <string name="title_activity_launch__screen">Launch_Screen</string>
+
+    <string name="Dob">Date of birth</string>
+    <string name="parentsName">Parents Name:</string>
+    <string name="parentName">Parents Name</string>
 </resources>
