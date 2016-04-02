@@ -24,7 +24,8 @@
             android:label="@string/title_activity_launch__screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SplashActivity" />
-        <activity android:name=".Topics"></activity>
+        <activity android:name=".Topics" />
+        <activity android:name=".MathQuestionActivity"></activity>
     </application>
 
 </manifest>
