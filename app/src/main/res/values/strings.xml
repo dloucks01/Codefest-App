@@ -16,5 +16,10 @@
         <item>Social/Emotional</item>
         <item>Physical Development</item>
     </array>
+    <string name="fragmentArrangeNumberInstruction">Touch numbers in order from 1 to 5</string>
     <string name="title_activity_launch__screen">Launch_Screen</string>
+    <string name="title_activity_math_questions">MathQuestionsActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

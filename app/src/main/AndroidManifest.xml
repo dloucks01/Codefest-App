@@ -25,7 +25,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SplashActivity" />
         <activity android:name=".Topics" />
+<<<<<<< HEAD
         <activity android:name=".Instructions"></activity>
+=======
+        <activity android:name=".MathQuestionActivity"></activity>
+>>>>>>> 585e5a5e0cf8cc174913bc9e9b904fd9581e24c0
     </application>
 
 </manifest>

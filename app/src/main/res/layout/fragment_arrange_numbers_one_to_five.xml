@@ -1,0 +1,73 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.majorscreations.kindergartenapp.ArrangeNumbersOneToFiveFragment"
+    android:columnCount="5"
+    android:rowCount="5"
+    android:stretchColumns="*"
+    android:layout_margin="5dp">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TableRow android:layout_margin="40dp" android:gravity="center">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/fragmentArrangeNumberInstruction"
+            android:id="@+id/instruction"
+            android:textAlignment="center"
+            android:layout_span="5"
+            android:textSize="@dimen/small_text" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="1"
+            android:id="@+id/firstNumber"
+            android:textAlignment="center"
+            android:textSize="@dimen/large_text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="2"
+            android:id="@+id/secondNumber"
+            android:textAlignment="center"
+            android:textSize="@dimen/large_text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="3"
+            android:id="@+id/thirdNumber"
+            android:textAlignment="center"
+            android:textSize="@dimen/large_text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="4"
+            android:id="@+id/fourthNumber"
+            android:textAlignment="center"
+            android:textSize="@dimen/large_text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="5"
+            android:id="@+id/fifthNumber"
+            android:textAlignment="center"
+            android:textSize="@dimen/large_text" />
+
+    </TableRow>
+
+
+</TableLayout>
