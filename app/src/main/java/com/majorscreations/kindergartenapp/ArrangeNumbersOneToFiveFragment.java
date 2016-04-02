@@ -84,7 +84,10 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
         @Override
         public void onClick(View view) {
             SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
             TextView tv = (TextView) view;
+            Log.i(getClass().getSimpleName(), tv.getClass().getSimpleName() + " was clicked and will be disabled from now on.");
+            tv.setClickable(false);         // Prevent the textview from being clicked twice.
             int value = Integer.parseInt(tv.getText().toString());
             tv.setTextColor(getResources().getColor(R.color.dimmed));
             clicked.add(value);
