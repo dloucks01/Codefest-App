@@ -103,9 +103,9 @@ public class OutputActivity extends AppCompatActivity {
                                 }
                             }
                         });
-                        builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                        builder.setPositiveButton("Statistics", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-
+                                startActivity(new Intent(OutputActivity.this, StatisticsWebView.class));
                             }
                         });
                         builder.create();

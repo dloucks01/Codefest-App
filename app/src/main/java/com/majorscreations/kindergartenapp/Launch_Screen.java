@@ -47,7 +47,7 @@ public class Launch_Screen extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(Launch_Screen.this, StatisticsWebView.class));
+                startActivity(new Intent(Launch_Screen.this, login.class));
 
             }
         });
