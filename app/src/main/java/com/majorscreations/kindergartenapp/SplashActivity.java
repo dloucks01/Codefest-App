@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
 
-        ImageView imgRotate = (ImageView)findViewById(R.id.imageView);
+        ImageView imgRotate = (ImageView)findViewById(R.id.imageView2);
         imgRotate.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anim));
 
         TimerTask task = new TimerTask(){

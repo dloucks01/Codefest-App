@@ -108,6 +108,11 @@ public class OutputActivity extends AppCompatActivity {
                                 startActivity(new Intent(OutputActivity.this, StatisticsWebView.class));
                             }
                         });
+                        builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                            }
+                        });
                         builder.create();
                         builder.show();
 
