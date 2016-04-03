@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class login extends AppCompatActivity {
     String email1, childName, dob1, parentName1;
@@ -27,10 +28,39 @@ public class login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email1 = (email.getText().toString());
-                childName = (name.getText().toString());
-                dob1 = (dob.getText().toString());
-                parentName1 = (parentsName.getText().toString());
+
+                String error = "null";
+                // Check to see if any of the fields are empty
+                // Concatenate the fields needed to be checked by the user
+                if (isEmpty(name)) {
+                    error += "Child's name\n";
+                }
+                if (isEmpty(email)){
+                    error += "Parents E-mail address\n";
+                }
+                if (isEmpty(dob)) {
+                    error += "Child Date of Birth\n";
+                }
+                if (isEmpty(parentsName)) {
+                    error += "Parents name\n";
+                }
+
+                if (error.equals("null") ) {  // No error
+
+                    email1 = (email.getText().toString());
+                    childName = (name.getText().toString());
+                    dob1 = (dob.getText().toString());
+                    parentName1 = (parentsName.getText().toString());
+                } else {
+
+                    error = error.substring(4);
+
+                    Toast.makeText(getApplicationContext(), "Please fill in the following fields:\n\n" + error, Toast.LENGTH_LONG).show();
+                    return;
+
+                }
+
+
 
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putString("key1", email1);
@@ -46,7 +76,15 @@ public class login extends AppCompatActivity {
 
 
 
+
+
     }
+
+    private boolean isEmpty(EditText etText) {
+        return etText.getText().toString().trim().length() == 0;
+    }
+
+
 
 
 }

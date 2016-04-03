@@ -17,8 +17,22 @@
             android:name=".Launch_Screen"
             android:label="@string/title_activity_launch__screen"
             android:theme="@style/AppTheme.NoActionBar" />
+<<<<<<< HEAD
         <activity android:name=".Instructions" />
         <activity android:name=".SplashActivity">
+=======
+
+
+
+        <activity android:name=".Instructions"></activity>
+
+
+
+
+        <activity android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+
+>>>>>>> f301320b606365a5c318262e6ce4cfc5a4b5de52
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

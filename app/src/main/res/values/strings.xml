@@ -6,6 +6,7 @@
     <string name="txtEmail">Email:</string>
     <string name="btnLogin">Login</string>
     <string name="title_activity_output">OutputActivity</string>
+    <string name="nmbrToGroupTitle">Enter the number of ladybugs you see</string>
     <string name="childs_name">[ChildsName]</string>
     <string name="dob">[ChildDOB]</string>
     <string name="parents_name">[ParentsName]</string>
