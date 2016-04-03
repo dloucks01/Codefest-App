@@ -93,7 +93,8 @@ public class MatchNumberToGroupFragment extends Fragment {
 
                 }
 
-                MatchNumberToGroupFragment fragment = new MatchNumberToGroupFragment();
+                underStandMoreOrLessFragment fragment = new underStandMoreOrLessFragment();
+
                 getFragmentManager().beginTransaction()
                         .replace(((ViewGroup) getView().getParent()).getId(), fragment)
                         .setTransition(FragmentTransaction.TRANSIT_EXIT_MASK)
