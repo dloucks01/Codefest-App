@@ -55,85 +55,28 @@ public class MatchNumberToGroupFragment extends Fragment {
         number4 = (TextView) fragmentView.findViewById(R.id.fourthNumber);
         number5 = (TextView) fragmentView.findViewById(R.id.fifthNumber);
 
-        // Set click listeners
+
+        image1 = (ImageButton)fragmentView.findViewById(R.id.imageButton1);
+        image2 = (ImageButton)fragmentView.findViewById(R.id.imageButton2);
+        image3 = (ImageButton)fragmentView.findViewById(R.id.imageButton3);
+        image4 = (ImageButton)fragmentView.findViewById(R.id.imageButton4);
+        image5 = (ImageButton)fragmentView.findViewById(R.id.imageButton5);
+
+
+        // Set click listeners for numbers
         number1.setOnClickListener(new NumbersClickListener());
         number2.setOnClickListener(new NumbersClickListener());
         number3.setOnClickListener(new NumbersClickListener());
         number4.setOnClickListener(new NumbersClickListener());
         number5.setOnClickListener(new NumbersClickListener());
 
+        // Set click listeners for images
+        image1.setOnClickListener(new ImageClickListener());
+        image2.setOnClickListener(new ImageClickListener());
+        image3.setOnClickListener(new ImageClickListener());
+        image4.setOnClickListener(new ImageClickListener());
+        image5.setOnClickListener(new ImageClickListener());
 
-        final ImageButton image1 = (ImageButton)fragmentView.findViewById(R.id.imageButton1);
-        image1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-
-        });
-
-        final ImageButton image2 = (ImageButton)fragmentView.findViewById(R.id.imageButton2);
-        image2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        final ImageButton image3 = (ImageButton)fragmentView.findViewById(R.id.imageButton3);
-        image3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        final ImageButton image4 = (ImageButton)fragmentView.findViewById(R.id.imageButton4);
-        image4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        final ImageButton image5 = (ImageButton)fragmentView.findViewById(R.id.imageButton5);
-        image5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-
-        // Set click listeners
-        image1.setOnClickListener(new NumbersClickListener());
-        image2.setOnClickListener(new NumbersClickListener());
-        image3.setOnClickListener(new NumbersClickListener());
-        image4.setOnClickListener(new NumbersClickListener());
-        image5.setOnClickListener(new NumbersClickListener());
-
-
-
-        clickedNumber = new ArrayList<Integer>();
-
-        ArrayList<Integer> scrambled = new ArrayList<Integer>();    // Scrambled arraylist
-
-
-        // Add numbers to both the correct arraylist, and the arrayList we will scramble
-        for (int i = 1; i < 6; i++) {
-
-            scrambled.add(i);
-        }
-
-        // Scramble the arraylist
-        Collections.shuffle(scrambled);
-
-        // Set the text of the textviews with the scrambled data
-        number1.setText(Integer.toString(scrambled.get(0)));
-        number2.setText(Integer.toString(scrambled.get(1)));
-        number3.setText(Integer.toString(scrambled.get(2)));
-        number4.setText(Integer.toString(scrambled.get(3)));
-        number5.setText(Integer.toString(scrambled.get(4)));
 
         // Set image buttons to integer tags
         image1.setTag(0);
@@ -141,6 +84,44 @@ public class MatchNumberToGroupFragment extends Fragment {
         image3.setTag(2);
         image4.setTag(3);
         image5.setTag(4);
+
+        number1.setTag(0);
+        number2.setTag(1);
+        number3.setTag(2);
+        number4.setTag(3);
+        number5.setTag(4);
+
+
+
+
+        if (clickedNumber == clickedImage) {          // Checking the arraylist to see if they match. If
+            // They do, then we have a correct result
+            Log.i(getClass().getSimpleName(), "Correct");
+
+
+            Integer right = sharedPref.getInt("key5", 0);
+            Integer total = sharedPref.getInt("key7", 0);
+
+            right += 1;
+            total += 1;
+
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("key5", right);
+            editor.putInt("key7", total);
+            editor.commit();
+            //startActivity(new Intent(MathQuestionActivity.this, OutputActivity.class));
+        } else {
+
+
+            Integer wrong = sharedPref.getInt("key6", 0);
+            Integer total = sharedPref.getInt("key7", 0);
+
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("key6", wrong);
+            editor.putInt("key7", total);
+            editor.commit();
+            Log.i(getClass().getSimpleName(), "Incorrect");
+        }
 
 
         return fragmentView;
@@ -152,63 +133,25 @@ public class MatchNumberToGroupFragment extends Fragment {
         public void onClick(View view) {
             int i;
             TextView tv = (TextView) view;
-            ImageButton tv1 = (ImageButton) view;
-            int value = Integer.parseInt(tv.getText().toString());
             tv.setTextColor(getResources().getColor(R.color.dimmed));
-            tv1.setBackgroundColor(getResources().getColor(R.color.dimmed));
             tv.setEnabled(false);
-            tv1.setEnabled(false);
 
 
-            for (i=0; i<5; i++) {
-                if (clickedNumber == clickedImage) {
-                    clickedNumber.add(value);
-                    clickedImage.add(value);
-
-                    rightCount += 1;
-                }
-
-                else {
-                    clickedNumber.add(value);
-                    clickedImage.add(value);
-
-                }
-
-
-            }
-
-            if (rightCount == 5) {
-                if (clickedNumber == clickedImage) {          // Checking the arraylist to see if they match. If
-                    // They do, then we have a correct result
-                    Log.i(getClass().getSimpleName(), "Correct");
-
-
-                    Integer right = sharedPref.getInt("key5", 0);
-                    Integer total = sharedPref.getInt("key7", 0);
-
-                    right += 1;
-                    total += 1;
-
-                    SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putInt("key5", right);
-                    editor.putInt("key7", total);
-                    editor.commit();
-                    //startActivity(new Intent(MathQuestionActivity.this, OutputActivity.class));
-                } else {
-
-
-                    Integer wrong = sharedPref.getInt("key6", 0);
-                    Integer total = sharedPref.getInt("key7", 0);
-
-                    SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putInt("key6", wrong);
-                    editor.putInt("key7", total);
-                    editor.commit();
-                    Log.i(getClass().getSimpleName(), "Incorrect");
-                }
-            }
         }
     }
+
+    private class ImageClickListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            int i;
+            ImageButton tv = (ImageButton) view;
+            tv.setBackgroundColor(getResources().getColor(R.color.dimmed));
+            tv.setEnabled(false);
+        }
+    }
+
+
 
 
 }
