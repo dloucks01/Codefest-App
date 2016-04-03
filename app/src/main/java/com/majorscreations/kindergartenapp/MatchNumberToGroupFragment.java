@@ -1,6 +1,7 @@
 package com.majorscreations.kindergartenapp;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -8,6 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -20,24 +23,16 @@ public class MatchNumberToGroupFragment extends Fragment {
     private ArrayList<Integer> clickedNumber;     // Holds what has been touched, in the order if was touched, to compare to later.
     private ArrayList<Integer> clickedImage;
 
-
-    private int rightCount = 0;
-
     final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+    int firstEntry, secondEntry, thirdEntry, fourthEntry, fifthEntry, counter;
 
 
-    private TextView number1;       // The five numbers that will be clicked.
-    private TextView number2;
-    private TextView number3;
-    private TextView number4;
-    private TextView number5;
+    private EditText number1;       // The five numbers that will be clicked.
+    private EditText number2;
+    private EditText number3;
+    private EditText number4;
+    private EditText number5;
 
-
-    private ImageButton image1;     // The five images that will be clicked
-    private ImageButton image2;
-    private ImageButton image3;
-    private ImageButton image4;
-    private ImageButton image5;
 
 
     public View onCreateView(LayoutInflater inflater,
@@ -46,56 +41,17 @@ public class MatchNumberToGroupFragment extends Fragment {
          * Inflate the layout for this fragment
          */
 
-        View fragmentView = inflater.inflate(
+        final View fragmentView = inflater.inflate(
                 R.layout.fragment_match_number_to_group, container, false);
+        number1 = (EditText)fragmentView.findViewById(R.id.inputOne);
+        number2 = (EditText)fragmentView.findViewById(R.id.inputTwo);
+        number3 = (EditText)fragmentView.findViewById(R.id.inputThree);
+        number4 = (EditText)fragmentView.findViewById(R.id.inputFour);
+        number5 = (EditText)fragmentView.findViewById(R.id.inputFive);
 
-        number1 = (TextView) fragmentView.findViewById(R.id.firstNumber);
-        number2 = (TextView) fragmentView.findViewById(R.id.secondNumber);
-        number3 = (TextView) fragmentView.findViewById(R.id.thirdNumber);
-        number4 = (TextView) fragmentView.findViewById(R.id.fourthNumber);
-        number5 = (TextView) fragmentView.findViewById(R.id.fifthNumber);
-
-
-        image1 = (ImageButton)fragmentView.findViewById(R.id.imageButton1);
-        image2 = (ImageButton)fragmentView.findViewById(R.id.imageButton2);
-        image3 = (ImageButton)fragmentView.findViewById(R.id.imageButton3);
-        image4 = (ImageButton)fragmentView.findViewById(R.id.imageButton4);
-        image5 = (ImageButton)fragmentView.findViewById(R.id.imageButton5);
-
-
-        // Set click listeners for numbers
-        number1.setOnClickListener(new NumbersClickListener());
-        number2.setOnClickListener(new NumbersClickListener());
-        number3.setOnClickListener(new NumbersClickListener());
-        number4.setOnClickListener(new NumbersClickListener());
-        number5.setOnClickListener(new NumbersClickListener());
-
-        // Set click listeners for images
-        image1.setOnClickListener(new ImageClickListener());
-        image2.setOnClickListener(new ImageClickListener());
-        image3.setOnClickListener(new ImageClickListener());
-        image4.setOnClickListener(new ImageClickListener());
-        image5.setOnClickListener(new ImageClickListener());
-
-
-        // Set image buttons to integer tags
-        image1.setTag(0);
-        image2.setTag(1);
-        image3.setTag(2);
-        image4.setTag(3);
-        image5.setTag(4);
-
-        number1.setTag(0);
-        number2.setTag(1);
-        number3.setTag(2);
-        number4.setTag(3);
-        number5.setTag(4);
-
-
-
-
-        if (clickedNumber == clickedImage) {          // Checking the arraylist to see if they match. If
-            // They do, then we have a correct result
+        firstEntry = Integer.parseInt(number1.getText().toString());
+        if(firstEntry == 4 && secondEntry == 1 && thirdEntry == 3 && fourthEntry == 2 && fifthEntry == 5)
+        {
             Log.i(getClass().getSimpleName(), "Correct");
 
 
@@ -109,10 +65,9 @@ public class MatchNumberToGroupFragment extends Fragment {
             editor.putInt("key5", right);
             editor.putInt("key7", total);
             editor.commit();
-            //startActivity(new Intent(MathQuestionActivity.this, OutputActivity.class));
-        } else {
+        }
 
-
+        else {
             Integer wrong = sharedPref.getInt("key6", 0);
             Integer total = sharedPref.getInt("key7", 0);
 
@@ -121,35 +76,23 @@ public class MatchNumberToGroupFragment extends Fragment {
             editor.putInt("key7", total);
             editor.commit();
             Log.i(getClass().getSimpleName(), "Incorrect");
+
+
         }
 
+        final Button completeButton = (Button)fragmentView.findViewById(R.id.completeButton);
+        completeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
 
         return fragmentView;
+
     }
 
-    private class NumbersClickListener implements View.OnClickListener {
-
-        @Override
-        public void onClick(View view) {
-            int i;
-            TextView tv = (TextView) view;
-            tv.setTextColor(getResources().getColor(R.color.dimmed));
-            tv.setEnabled(false);
-
-
-        }
-    }
-
-    private class ImageClickListener implements View.OnClickListener {
-
-        @Override
-        public void onClick(View view) {
-            int i;
-            ImageButton tv = (ImageButton) view;
-            tv.setBackgroundColor(getResources().getColor(R.color.dimmed));
-            tv.setEnabled(false);
-        }
-    }
 
 
 
