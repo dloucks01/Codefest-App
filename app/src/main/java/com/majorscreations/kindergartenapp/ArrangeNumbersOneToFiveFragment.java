@@ -127,6 +127,7 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
                 MatchNumberToGroupFragment fragment = new MatchNumberToGroupFragment();
                 getFragmentManager().beginTransaction()
                         .replace(((ViewGroup) getView().getParent()).getId(), fragment)
+                        .setTransition(FragmentTransaction.TRANSIT_EXIT_MASK)
                         .addToBackStack(null)
                         .commit();
 
