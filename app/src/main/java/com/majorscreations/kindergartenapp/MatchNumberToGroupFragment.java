@@ -20,11 +20,9 @@ import java.util.Collections;
 
 public class MatchNumberToGroupFragment extends Fragment {
 
-    private ArrayList<Integer> clickedNumber;     // Holds what has been touched, in the order if was touched, to compare to later.
-    private ArrayList<Integer> clickedImage;
 
     private SharedPreferences sharedPref;
-    int firstEntry, secondEntry, thirdEntry, fourthEntry, fifthEntry, counter;
+    int firstEntry, secondEntry, thirdEntry, fourthEntry, fifthEntry;
 
 
     private EditText number1;       // The five numbers that will be clicked.
@@ -45,6 +43,7 @@ public class MatchNumberToGroupFragment extends Fragment {
 
         final View fragmentView = inflater.inflate(
                 R.layout.fragment_match_number_to_group, container, false);
+
         number1 = (EditText)fragmentView.findViewById(R.id.inputOne);
         number2 = (EditText)fragmentView.findViewById(R.id.inputTwo);
         number3 = (EditText)fragmentView.findViewById(R.id.inputThree);
@@ -56,11 +55,13 @@ public class MatchNumberToGroupFragment extends Fragment {
         completeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 firstEntry = Integer.parseInt(number1.getText().toString());
                 secondEntry = Integer.parseInt(number2.getText().toString());
                 thirdEntry = Integer.parseInt(number3.getText().toString());
                 fourthEntry = Integer.parseInt(number4.getText().toString());
                 fifthEntry = Integer.parseInt(number5.getText().toString());
+
                 if(firstEntry == 4 && secondEntry == 1 && thirdEntry == 3 && fourthEntry == 2 && fifthEntry == 5)
                 {
                     Log.i(getClass().getSimpleName(), "Correct");

@@ -22,7 +22,8 @@
             android:id="@+id/kindergartenImageView"
             android:layout_span="2"
             android:layout_gravity="center_horizontal"
-            android:src="@mipmap/kindergarden1" />
+            android:src="@mipmap/kindergarden1"
+            android:layout_marginBottom="50dp" />
     </TableRow>
 
     <TableRow>
