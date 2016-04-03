@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.majorscreations.kindergartenapp.underStandMoreOrLessFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:id="@+id/textViewGreaterNum"
+        android:layout_gravity="left|top"
+        android:text="Is the number greater then or less then?"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:nestedScrollingEnabled="false" />
+
+    <TextView
+        android:layout_width="125dp"
+        android:layout_height="118dp"
+        android:id="@+id/textViewRandNumLess"
+        android:layout_gravity="right|center_vertical"
+        android:hint="number" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Greater"
+        android:id="@+id/greaterBtn"
+        android:layout_gravity="left|bottom"
+        android:layout_margin="50dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lesser"
+        android:id="@+id/lesserBtn"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="50dp" />
+
+    <TextView
+        android:layout_width="116dp"
+        android:layout_height="126dp"
+        android:id="@+id/randomNumMore"
+        android:layout_gravity="left|center_vertical"
+        android:hint="Your number" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Number:"
+        android:id="@+id/textView4"
+        android:layout_gravity="left|top"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="150dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+</FrameLayout>
