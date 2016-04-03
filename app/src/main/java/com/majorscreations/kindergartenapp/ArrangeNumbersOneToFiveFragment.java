@@ -23,7 +23,7 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
 
     private int amountClickedFlag = 0;
 
-    final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
 
 
     private TextView number1;               // The five numbers that will be clicked.
@@ -83,7 +83,11 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
             TextView tv = (TextView) view;
+            Log.i(getClass().getSimpleName(), tv.getClass().getSimpleName() + " was clicked and will be disabled from now on.");
+            tv.setClickable(false);         // Prevent the textview from being clicked twice.
             int value = Integer.parseInt(tv.getText().toString());
             tv.setTextColor(getResources().getColor(R.color.dimmed));
             clicked.add(value);
@@ -105,7 +109,8 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
                     editor.putInt("key5", right);
                     editor.putInt("key7", total);
                     editor.commit();
-                    //startActivity(new Intent(MathQuestionActivity.this, OutputActivity.class));
+                    Intent intent = new Intent(getActivity(), OutputActivity.class);
+                    startActivity(intent);
                 } else {
 
 

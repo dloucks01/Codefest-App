@@ -13,7 +13,7 @@ public class MathQuestionActivity extends AppCompatActivity {
 
     int total, right, wrong;
 
-    final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+
     // List of fragments handled for this app
 
     ArrangeNumbersOneToFiveFragment arrangeGameFragment;
@@ -22,7 +22,9 @@ public class MathQuestionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_math_question);
+
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("key5", right);
