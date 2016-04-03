@@ -13,8 +13,8 @@ import android.widget.ImageView;
 
 public class Topics extends AppCompatActivity {
 
-    Integer[] Choices = {R.mipmap.math, R.mipmap.social, R.mipmap.language, R.mipmap.development
-    , R.mipmap.learning};
+    Integer[] Choices = {R.mipmap.math, R.mipmap.socialone, R.mipmap.language, R.mipmap.development
+    , R.mipmap.learningone};
     ImageView pic;
 
     @Override

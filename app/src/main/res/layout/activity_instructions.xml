@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.majorscreations.kindergartenapp.Instructions"
-    android:background="#cbcaca">
+    android:background="#bdbdbd">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="INSTRUCTIONS"
         android:id="@+id/instructTitle"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="38dp"
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_alignParentTop="true"
@@ -27,9 +27,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/instructText1"
-        android:layout_marginTop="36dp"
         android:text="On the next screen click on the topic that you would like to start."
-        android:layout_below="@+id/instructTitle"
+        android:layout_above="@+id/instructText2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -51,5 +50,16 @@
         android:layout_below="@+id/instructText2"
         android:layout_toRightOf="@+id/instructTitle"
         android:layout_toEndOf="@+id/instructTitle" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:id="@+id/editText"
+        android:layout_below="@+id/instructTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#0d0d0d" />
 
 </RelativeLayout>
