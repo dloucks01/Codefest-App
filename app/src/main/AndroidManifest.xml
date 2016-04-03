@@ -20,7 +20,19 @@
             android:label="@string/title_activity_launch__screen"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".SplashActivity" >
+
+
+
+
+        <activity android:name=".Instructions"></activity>
+
+
+
+
+        <activity android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+
+>>>>>>> origin/master
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,6 +44,9 @@
 
         <activity android:name=".MathQuestionActivity"></activity>
 
+
+
+>>>>>>> origin/master
     </application>
 
 </manifest>

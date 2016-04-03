@@ -13,7 +13,8 @@ import android.widget.ImageView;
 
 public class Topics extends AppCompatActivity {
 
-    Integer[] Choices = {R.mipmap.math};
+    Integer[] Choices = {R.mipmap.math, R.mipmap.social, R.mipmap.language, R.mipmap.development
+    , R.mipmap.learning};
     ImageView pic;
 
     @Override
@@ -32,6 +33,22 @@ public class Topics extends AppCompatActivity {
                     case 0:
                         //Call Mathematics, right now call output
                         startActivity(new Intent(Topics.this, MathQuestionActivity.class));
+             break;
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
+
+
                         break;
                 }
             }

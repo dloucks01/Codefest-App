@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.majorscreations.kindergartenapp.MatchNumberToGroupFragment"
+    android:rowCount="200"
+    android:columnCount="200">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the number of ladybugs you see for each group"
+        android:id="@+id/nmbrToGroupTitle"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="25dp" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputOne"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:elevation="5dp"
+        android:textColor="#000000"
+        android:layout_above="@+id/oneBug"
+        android:maxLength="1"
+        android:layout_alignLeft="@+id/nmbrToGroupTitle"
+        android:layout_alignStart="@+id/nmbrToGroupTitle" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputTwo"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:maxLength="1"
+        android:layout_above="@+id/inputThree"
+        android:layout_alignLeft="@+id/inputOne"
+        android:layout_alignStart="@+id/inputOne"
+        android:layout_marginBottom="16dp"
+        android:textColor="#000000"
+        android:elevation="4dp" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputThree"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:maxLength="1"
+        android:layout_above="@+id/twoBug"
+        android:layout_alignLeft="@+id/inputTwo"
+        android:layout_alignStart="@+id/inputTwo"
+        android:textColor="#000000"
+        android:elevation="4dp" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputFour"
+        android:inputType="number"
+        android:maxLength="1"
+        android:imeOptions="actionNext"
+        android:layout_alignBottom="@+id/twoBug"
+        android:layout_alignLeft="@+id/inputThree"
+        android:layout_alignStart="@+id/inputThree"
+        android:textColor="#000000"
+        android:elevation="4dp" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputFive"
+        android:maxLength="1"
+        android:layout_marginBottom="129dp"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/inputFour"
+        android:layout_alignStart="@+id/inputFour"
+        android:textColor="#000000"
+        android:elevation="4dp"
+ />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:id="@+id/oneBug"
+        android:src="@mipmap/onebug"
+        android:scaleType="fitStart"
+        android:layout_above="@+id/threeBug"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:id="@+id/twoBug"
+        android:src="@mipmap/twobugs"
+        android:scaleType="fitStart"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/inputFive"
+        android:layout_alignLeft="@+id/threeBug"
+        android:layout_alignStart="@+id/threeBug" />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:id="@+id/threeBug"
+        android:src="@mipmap/threebugs"
+        android:scaleType="fitStart"
+        android:layout_above="@+id/twoBug"
+        android:layout_alignLeft="@+id/oneBug"
+        android:layout_alignStart="@+id/oneBug" />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:id="@+id/fourBug"
+        android:src="@mipmap/fourbugs"
+        android:scaleType="fitStart"
+        android:layout_above="@+id/oneBug"
+        android:layout_alignLeft="@+id/oneBug"
+        android:layout_alignStart="@+id/oneBug" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:id="@+id/fiveBug"
+        android:src="@mipmap/fivebugs"
+        android:scaleType="fitStart"
+        android:layout_below="@+id/inputFour"
+        android:layout_alignLeft="@+id/twoBug"
+        android:layout_alignStart="@+id/twoBug" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FINISH"
+        android:id="@+id/completeButton"
+        android:layout_below="@+id/fiveBug"
+        android:layout_alignRight="@+id/nmbrToGroupTitle"
+        android:layout_alignEnd="@+id/nmbrToGroupTitle"
+        android:layout_marginTop="25dp" />
+
+</RelativeLayout>

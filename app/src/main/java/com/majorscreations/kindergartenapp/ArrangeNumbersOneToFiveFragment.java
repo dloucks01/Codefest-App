@@ -1,8 +1,13 @@
 package com.majorscreations.kindergartenapp;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +24,8 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
     private ArrayList<Integer> compare;     // The correct order
 
     private int amountClickedFlag = 0;
+
+
 
 
     private TextView number1;               // The five numbers that will be clicked.
@@ -78,7 +85,11 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
             TextView tv = (TextView) view;
+            Log.i(getClass().getSimpleName(), tv.getClass().getSimpleName() + " was clicked and will be disabled from now on.");
+            tv.setClickable(false);         // Prevent the textview from being clicked twice.
             int value = Integer.parseInt(tv.getText().toString());
             tv.setTextColor(getResources().getColor(R.color.dimmed));
             clicked.add(value);
@@ -88,9 +99,39 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
                 if (compare.equals(clicked)) {          // Checking the arraylist to see if they match. If
                                                         // They do, then we have a correct result
                     Log.i(getClass().getSimpleName(), "Correct");
+
+
+                    Integer right = sharedPref.getInt("key5", 0);
+                    Integer total = sharedPref.getInt("key7", 0);
+
+                    right += 1;
+                    total += 1;
+
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putInt("key5", right);
+                    editor.putInt("key7", total);
+                    editor.commit();
                 } else {
+
+
+                    Integer wrong = sharedPref.getInt("key6", 0);
+                    Integer total = sharedPref.getInt("key7", 0);
+
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putInt("key6", wrong);
+                    editor.putInt("key7", total);
+                    editor.commit();
                     Log.i(getClass().getSimpleName(), "Incorrect");
+
                 }
+                MatchNumberToGroupFragment fragment = new MatchNumberToGroupFragment();
+                getFragmentManager().beginTransaction()
+                        .replace(((ViewGroup) getView().getParent()).getId(), fragment)
+                        .setTransition(FragmentTransaction.TRANSIT_EXIT_MASK)
+                        .addToBackStack(null)
+                        .commit();
+
+
             }
         }
     }

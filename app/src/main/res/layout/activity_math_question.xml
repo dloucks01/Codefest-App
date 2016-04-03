@@ -7,14 +7,36 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.majorscreations.kindergartenapp.MathQuestionActivity">
+    tools:context="com.majorscreations.kindergartenapp.MathQuestionActivity"
+    android:background="@mipmap/mathbackground">
     
     <fragment
         android:id="@+id/fragment_arrange_numbers"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
+
         android:layout_margin="10dp"
         android:name="com.majorscreations.kindergartenapp.ArrangeNumbersOneToFiveFragment"
         tools:layout="@layout/fragment_arrange_numbers_one_to_five" />
+
+        android:layout_margin="20dp"
+        android:name="com.majorscreations.kindergartenapp.ArrangeNumbersOneToFiveFragment"
+        tools:layout="@layout/fragment_arrange_numbers_one_to_five" />
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_match_number_to_group"
+        android:layout_margin="20dp"
+        android:name="com.majorscreations.kindergartenapp.MatchNumberToGroupFragment"
+        tools:layout="@layout/fragment_match_number_to_group" />
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_identify_shapes"
+        android:layout_margin="20dp"
+        android:name="com.majorscreations.kindergartenapp.IdentifyShapes"
+        tools:layout="@layout/fragment_identify_shapes" />
 
 </RelativeLayout>
