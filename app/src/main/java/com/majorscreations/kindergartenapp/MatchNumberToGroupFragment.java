@@ -1,6 +1,7 @@
 package com.majorscreations.kindergartenapp;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -92,6 +93,12 @@ public class MatchNumberToGroupFragment extends Fragment {
 
                 }
 
+                MatchNumberToGroupFragment fragment = new MatchNumberToGroupFragment();
+                getFragmentManager().beginTransaction()
+                        .replace(((ViewGroup) getView().getParent()).getId(), fragment)
+                        .setTransition(FragmentTransaction.TRANSIT_EXIT_MASK)
+                        .addToBackStack(null)
+                        .commit();
 
             }
         });
