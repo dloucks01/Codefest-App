@@ -32,7 +32,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/txtName"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/txtName" />
+            android:id="@+id/txtName"
+            android:layout_marginLeft="13dp" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -93,7 +94,7 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/parentsName"
             android:id="@+id/textView3"
-            />
+            android:layout_marginLeft="13dp" />
 
         <EditText
             android:layout_width="wrap_content"

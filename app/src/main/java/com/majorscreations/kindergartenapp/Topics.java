@@ -33,7 +33,7 @@ public class Topics extends AppCompatActivity {
                     case 0:
                         //Call Mathematics, right now call output
                         startActivity(new Intent(Topics.this, MathQuestionActivity.class));
-                        break;
+             break;
                     case 1:
 
                         break;
@@ -47,6 +47,7 @@ public class Topics extends AppCompatActivity {
 
                         break;
                     case 5:
+
 
                         break;
                 }

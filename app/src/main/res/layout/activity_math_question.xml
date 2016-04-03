@@ -14,6 +14,11 @@
         android:id="@+id/fragment_arrange_numbers"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+
+        android:layout_margin="10dp"
+        android:name="com.majorscreations.kindergartenapp.ArrangeNumbersOneToFiveFragment"
+        tools:layout="@layout/fragment_arrange_numbers_one_to_five" />
+
         android:layout_margin="20dp"
         android:name="com.majorscreations.kindergartenapp.ArrangeNumbersOneToFiveFragment"
         tools:layout="@layout/fragment_arrange_numbers_one_to_five" />
