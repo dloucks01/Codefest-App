@@ -17,10 +17,11 @@ import java.util.Collections;
 
 public class MatchNumberToGroupFragment extends Fragment {
 
-    private ArrayList<Integer> clicked;     // Holds what has been touched, in the order if was touched, to compare to later.
-    private ArrayList<Integer> compare;     // The correct order
+    private ArrayList<Integer> clickedNumber;     // Holds what has been touched, in the order if was touched, to compare to later.
+    private ArrayList<Integer> clickedImage;
 
-    private int amountClickedFlag = 0;
+
+    private int rightCount = 0;
 
     final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
@@ -68,6 +69,7 @@ public class MatchNumberToGroupFragment extends Fragment {
             public void onClick(View v) {
 
             }
+
         });
 
         final ImageButton image2 = (ImageButton)fragmentView.findViewById(R.id.imageButton2);
@@ -112,14 +114,14 @@ public class MatchNumberToGroupFragment extends Fragment {
 
 
 
-        clicked = new ArrayList<Integer>();
-        compare = new ArrayList<Integer>();
+        clickedNumber = new ArrayList<Integer>();
+
         ArrayList<Integer> scrambled = new ArrayList<Integer>();    // Scrambled arraylist
 
 
         // Add numbers to both the correct arraylist, and the arrayList we will scramble
         for (int i = 1; i < 6; i++) {
-            compare.add(i);
+
             scrambled.add(i);
         }
 
@@ -133,6 +135,14 @@ public class MatchNumberToGroupFragment extends Fragment {
         number4.setText(Integer.toString(scrambled.get(3)));
         number5.setText(Integer.toString(scrambled.get(4)));
 
+        // Set image buttons to integer tags
+        image1.setTag(0);
+        image2.setTag(1);
+        image3.setTag(2);
+        image4.setTag(3);
+        image5.setTag(4);
+
+
         return fragmentView;
     }
 
@@ -140,14 +150,35 @@ public class MatchNumberToGroupFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
+            int i;
             TextView tv = (TextView) view;
+            ImageButton tv1 = (ImageButton) view;
             int value = Integer.parseInt(tv.getText().toString());
             tv.setTextColor(getResources().getColor(R.color.dimmed));
-            clicked.add(value);
-            amountClickedFlag += 1;
+            tv1.setBackgroundColor(getResources().getColor(R.color.dimmed));
+            tv.setEnabled(false);
+            tv1.setEnabled(false);
 
-            if (amountClickedFlag == 5) {
-                if (compare.equals(clicked)) {          // Checking the arraylist to see if they match. If
+
+            for (i=0; i<5; i++) {
+                if (clickedNumber == clickedImage) {
+                    clickedNumber.add(value);
+                    clickedImage.add(value);
+
+                    rightCount += 1;
+                }
+
+                else {
+                    clickedNumber.add(value);
+                    clickedImage.add(value);
+
+                }
+
+
+            }
+
+            if (rightCount == 5) {
+                if (clickedNumber == clickedImage) {          // Checking the arraylist to see if they match. If
                     // They do, then we have a correct result
                     Log.i(getClass().getSimpleName(), "Correct");
 

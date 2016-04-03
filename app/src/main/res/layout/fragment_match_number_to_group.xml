@@ -51,12 +51,11 @@
         android:layout_height="wrap_content"
         android:text="4"
         android:id="@+id/fourthNumber"
-        android:layout_marginTop="20dp"
         android:textSize="40dp"
-        android:layout_below="@+id/thirdNumber"
+        android:clickable="true"
+        android:layout_below="@+id/imageButton3"
         android:layout_alignLeft="@+id/thirdNumber"
-        android:layout_alignStart="@+id/thirdNumber"
-        android:clickable="true" />
+        android:layout_alignStart="@+id/thirdNumber" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -131,10 +130,10 @@
         android:src="@mipmap/fivebugs"
         android:scaleType="fitCenter"
         android:background="#ffffff"
+        android:clickable="true"
         android:layout_above="@+id/imageButton1"
         android:layout_alignLeft="@+id/imageButton3"
-        android:layout_alignStart="@+id/imageButton3"
-        android:clickable="true" />
+        android:layout_alignStart="@+id/imageButton3" />
 
     <ImageButton
         android:layout_width="160dp"
