@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 
 /**
@@ -55,6 +56,7 @@ public class Id_ThreeShapes extends Fragment {
     //Turns count
     int TMcount;
     Button summitBtn1;
+    String attemp = "attempts: "+ LMcount;
 
     // TODO: Rename and change types and number of parameters
     public static Id_ThreeShapes newInstance(String param1, String param2) {
@@ -80,27 +82,19 @@ public class Id_ThreeShapes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_id__three_shapes, container, false);
-        ImageView pic = (ImageView)view.findViewById(R.id.picholder);
-        final RadioButton circleBtn1 = (RadioButton)view.findViewById(R.id.cirRadBtn);
-        final RadioButton rectangle1 = (RadioButton)view.findViewById(R.id.rectangleRadBtn);
-        final RadioButton square1 = (RadioButton)view.findViewById(R.id.squareRadBtn);
-        final RadioButton pentagon1 = (RadioButton)view.findViewById(R.id.pentaRadBtn);
-        final RadioButton triangle1 = (RadioButton)view.findViewById(R.id.triRadBtn);
-        final Button summitBtn1 = (Button)view.findViewById(R.id.submitBtn);
+        final View finalview = inflater.inflate(R.layout.fragment_id__three_shapes, container, false);
+        final
+        ImageView pic = (ImageView) finalview.findViewById(R.id.picholder);
+        final RadioButton circleBtn1 = (RadioButton) finalview.findViewById(R.id.cirRadBtn);
+        final RadioButton rectangle1 = (RadioButton) finalview.findViewById(R.id.rectangleRadBtn);
+        final RadioButton square1 = (RadioButton) finalview.findViewById(R.id.squareRadBtn);
+        final RadioButton pentagon1 = (RadioButton) finalview.findViewById(R.id.pentaRadBtn);
+        final RadioButton triangle1 = (RadioButton) finalview.findViewById(R.id.triRadBtn);
+        final Button summitBtn1 = (Button) finalview.findViewById(R.id.submitBtn);
 
-        summitBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-
-
-        switch (Number){
+        switch (Number) {
             case 0:
-                  pic.setTag(R.mipmap.circle);
+                pic.setTag(R.mipmap.circle);
                 break;
             case 1:
                 pic.setTag(R.mipmap.rectangle);
@@ -114,71 +108,60 @@ public class Id_ThreeShapes extends Fragment {
             case 4:
                 pic.setTag(R.mipmap.triangle);
                 break;
-
         }
 
+        summitBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        if(circleBtn1.isChecked() && Number == 0 )
-        {
-            RMcount++;
-            TMcount++;
-            startActivity(new Intent(getActivity(), OutputActivity.class));
-        }
-        else if(circleBtn1.isChecked() && Number != 0)
-        {
-            LMcount++;
-            TMcount++;
-        }
-        else if(rectangle1.isChecked() && Number == 1)
-        {
-            RMcount++;
-            TMcount++;
-            startActivity(new Intent(getActivity(), OutputActivity.class));
-        }
-        else if (rectangle1.isChecked() && Number != 1)
-        {
-            LMcount++;
-            TMcount++;
-        }
-        else if (square1.isChecked() && Number == 2)
-        {
-            RMcount++;
-            TMcount++;
-            startActivity(new Intent(getActivity(), OutputActivity.class));
-        }
-        else if (square1.isChecked() && Number != 2)
-        {
-            LMcount++;
-            TMcount++;
-        }
-        else if (pentagon1.isChecked() && Number == 3)
-        {
-            RMcount++;
-            TMcount++;
-            startActivity(new Intent(getActivity(), OutputActivity.class));
-        }
-        else if (pentagon1.isChecked() && Number != 3)
-        {
-            LMcount++;
-            TMcount++;
-        }
-        else if (triangle1.isChecked() && Number == 4)
-        {
-            RMcount++;
-            TMcount++;
-            startActivity(new Intent(getActivity(), OutputActivity.class));
-        }
-        else if (triangle1.isChecked() && Number != 4)
-        {
-            LMcount++;
-            TMcount++;
-        }
-        else
-        {
+                final TextView attemp = (TextView)finalview.findViewById(R.id.triTextView);
 
-        }
+                if (circleBtn1.isChecked() && Number == 0) {
+                    RMcount++;
+                    TMcount++;
+                    startActivity(new Intent(getActivity(), OutputActivity.class));
+                } else if (circleBtn1.isChecked() && Number != 0) {
+                    LMcount++;
+                    TMcount++;
+                } else if (rectangle1.isChecked() && Number == 1) {
+                    RMcount++;
+                    TMcount++;
+                    startActivity(new Intent(getActivity(), OutputActivity.class));
+                } else if (rectangle1.isChecked() && Number != 1) {
+                    LMcount++;
+                    TMcount++;
+                } else if (square1.isChecked() && Number == 2) {
+                    RMcount++;
+                    TMcount++;
+                    startActivity(new Intent(getActivity(), OutputActivity.class));
+                } else if (square1.isChecked() && Number != 2) {
+                    LMcount++;
+                    TMcount++;
+                } else if (pentagon1.isChecked() && Number == 3) {
+                    RMcount++;
+                    TMcount++;
+                    startActivity(new Intent(getActivity(), OutputActivity.class));
+                } else if (pentagon1.isChecked() && Number != 3) {
+                    LMcount++;
+                    TMcount++;
+                } else if (triangle1.isChecked() && Number == 4) {
+                    RMcount++;
+                    TMcount++;
+                    startActivity(new Intent(getActivity(), OutputActivity.class));
+                } else if (triangle1.isChecked() && Number != 4) {
+                    LMcount++;
+                    TMcount++;
+                } else {
 
-        return view;
+                }
+
+
+
+
+
+            }
+        });
+        return finalview;
 
     }
 
