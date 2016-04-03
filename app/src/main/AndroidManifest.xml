@@ -20,26 +20,24 @@
             android:label="@string/title_activity_launch__screen"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/SplashTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!--
+
+        <activity android:name=".Instructions"></activity>
+
+
+
+
         <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> -->
+        </activity>
         <activity android:name=".Topics"></activity>
 
         <activity android:name=".MathQuestionActivity"></activity>
+
 
     </application>
 
