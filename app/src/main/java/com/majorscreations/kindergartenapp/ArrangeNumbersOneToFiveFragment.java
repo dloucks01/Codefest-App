@@ -1,11 +1,13 @@
 package com.majorscreations.kindergartenapp;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -109,8 +111,6 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
                     editor.putInt("key5", right);
                     editor.putInt("key7", total);
                     editor.commit();
-                    Intent intent = new Intent(getActivity(), OutputActivity.class);
-                    startActivity(intent);
                 } else {
 
 
@@ -122,7 +122,15 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
                     editor.putInt("key7", total);
                     editor.commit();
                     Log.i(getClass().getSimpleName(), "Incorrect");
+
                 }
+                MatchNumberToGroupFragment fragment = new MatchNumberToGroupFragment();
+                getFragmentManager().beginTransaction()
+                        .replace(((ViewGroup) getView().getParent()).getId(), fragment)
+                        .addToBackStack(null)
+                        .commit();
+
+
             }
         }
     }
