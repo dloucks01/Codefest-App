@@ -149,7 +149,8 @@ public class MatchNumberToGroupFragment extends Fragment {
                     editor.putInt("key5", right);
                     editor.putInt("key7", total);
                     editor.commit();
-                    //startActivity(new Intent(MathQuestionActivity.this, OutputActivity.class));
+                    Intent i = new Intent(getActivity(), OutputActivity.class);
+                    startActivity(i);
                 } else {
 
 
@@ -160,6 +161,8 @@ public class MatchNumberToGroupFragment extends Fragment {
                     editor.putInt("key6", wrong);
                     editor.putInt("key7", total);
                     editor.commit();
+                    Intent i = new Intent(getActivity(), OutputActivity.class);
+                    startActivity(i);
                     Log.i(getClass().getSimpleName(), "Incorrect");
                 }
             }

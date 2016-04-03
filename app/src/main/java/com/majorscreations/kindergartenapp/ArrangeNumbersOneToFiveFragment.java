@@ -117,6 +117,9 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
                     Integer wrong = sharedPref.getInt("key6", 0);
                     Integer total = sharedPref.getInt("key7", 0);
 
+                    wrong += 1;
+                    total += 1;
+
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putInt("key6", wrong);
                     editor.putInt("key7", total);

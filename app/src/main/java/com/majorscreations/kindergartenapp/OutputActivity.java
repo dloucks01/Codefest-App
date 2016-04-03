@@ -45,39 +45,50 @@ public class OutputActivity extends AppCompatActivity {
         categoryListView.setAdapter(categoryArrayAdapter);
 
 
+
+
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
         final String parent_Name = sharedPref.getString("key4", "Nope");
         final String child_Name = sharedPref.getString("key2", "Nope");
-        final String Date_of_Birth = sharedPref.getString("key3","Nope");
+        final String Date_of_Birth = sharedPref.getString("key3", "Nope");
         final Integer Correct = sharedPref.getInt("key5", 0);
         final Integer Incorrect = sharedPref.getInt("key6", 0);
+        final Integer total = Correct + Incorrect;
+        float avg = 0;
+
+        if(Correct != 0) {
+            avg = total / Correct;
+        }
+        final float correctAvg = avg;
+        editor.putFloat("key8", correctAvg);
+        editor.putInt("key7", total);
+
 
 
         TextView pName = (TextView)findViewById(R.id.parentNameTextView);
         TextView cName = (TextView)findViewById(R.id.childsNameTextView);
-        TextView dobName = (TextView)findViewById(R.id.editTextdob);
+        TextView dobName = (TextView)findViewById(R.id.childDobTextView);
 
-        pName.setText(parent_Name);
-        cName.setText(child_Name);
+        pName.setText("Parent: "+parent_Name);
+        cName.setText("Child: "+child_Name);
+        dobName.setText("DoB: "+Date_of_Birth);
 
         categoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                switch(position)
-                {
+                switch (position) {
                     case 0:
-                        Toast toast = Toast.makeText(OutputActivity.this, "Gets into statement", Toast.LENGTH_SHORT);
-                        toast.show();
+
                         break;
                     case 1:
-                        Toast toast1 = Toast.makeText(OutputActivity.this, "Gets into statement", Toast.LENGTH_SHORT);
-                        toast1.show();
+
                         break;
                     case 2:
-                        Toast toast2= Toast.makeText(OutputActivity.this, "Gets into statement", Toast.LENGTH_SHORT);
-                        toast2.show();
-                        String [] results = {"Answers Correct: " + Correct, "Answer Incorrect: " + Incorrect};
+
+                        String[] results = {"Answers Correct: " + Correct, "Answer Incorrect: " + Incorrect};
 
                         final AlertDialog.Builder builder = new AlertDialog.Builder(OutputActivity.this);
                         builder.setTitle("Mathematics");
@@ -93,10 +104,10 @@ public class OutputActivity extends AppCompatActivity {
                             }
                         });
                         builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
+                            public void onClick(DialogInterface dialog, int id) {
 
-                                    }
-                                });
+                            }
+                        });
                         builder.create();
                         builder.show();
 
@@ -114,7 +125,8 @@ public class OutputActivity extends AppCompatActivity {
                 Intent sendEmail = new Intent(Intent.ACTION_SEND);
                 sendEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{parent_Name});
                 sendEmail.putExtra(Intent.EXTRA_SUBJECT, "Kindergarten Readiness Results");
-                sendEmail.putExtra(Intent.EXTRA_TEXT, "Output Results");
+                sendEmail.putExtra(Intent.EXTRA_TEXT, "Mathematics Results:\nCorrect: "+Correct+
+                "\nIncorrect: "+Incorrect+ "\nAverage: "+(correctAvg*100)+"%");
                 sendEmail.setType("message/text");
                 startActivity(Intent.createChooser(sendEmail,"Choose an Email Client :"));
             }
