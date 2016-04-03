@@ -1,0 +1,105 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.majorscreations.kindergartenapp.Id_ThreeShapes">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RadioGroup
+        android:layout_width="181dp"
+        android:layout_height="257dp"
+        android:layout_gravity="right|top"
+        android:weightSum="1">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="Square"
+            android:id="@+id/squareRadBtn" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:text="Rectangle"
+            android:id="@+id/rectangleRadBtn" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:text="Pentagon"
+            android:id="@+id/pentaRadBtn" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Triangle"
+            android:id="@+id/triRadBtn" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Circle"
+            android:id="@+id/cirRadBtn" />
+    </RadioGroup>
+
+    <ImageView
+        android:layout_width="285dp"
+        android:layout_height="152dp"
+        android:id="@+id/picholder"
+        android:layout_gravity="left|bottom"
+        android:nestedScrollingEnabled="false"
+        android:layout_marginBottom="50dp" />
+
+    <TextView
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:text="What is the shape inside of the box:"
+        android:id="@+id/textView5"
+        android:layout_gravity="left|top"
+        android:textSize="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submitBtn"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/triTextView"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="120dp"
+        android:hint="tries"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/winTextView"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="90dp"
+        android:textSize="20dp"
+        android:hint="Right"
+        android:text="Win" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/losTextView"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="60dp"
+        android:textSize="20dp"
+        android:hint="Right"
+        android:text="Lose" />
+
+</FrameLayout>

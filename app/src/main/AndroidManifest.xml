@@ -18,21 +18,43 @@
             android:label="@string/title_activity_launch__screen"
             android:theme="@style/AppTheme.NoActionBar" />
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 8b77f0a65c5d424f8ffb95fd9ae70eec6c5619ed
         <activity android:name=".Instructions"></activity>
 
         <activity android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
+>>>>>>> 8b77f0a65c5d424f8ffb95fd9ae70eec6c5619ed
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".Topics" />
         <activity android:name=".MathQuestionActivity" />
         <activity android:name=".StatisticsWebView"></activity>
+=======
+        <activity android:name=".Topics"></activity>
+
+
+        <activity android:name=".MathQuestionActivity"></activity>
+
+
+
+>>>>>>> origin/master
+>>>>>>> 8b77f0a65c5d424f8ffb95fd9ae70eec6c5619ed
     </application>
 
 </manifest>

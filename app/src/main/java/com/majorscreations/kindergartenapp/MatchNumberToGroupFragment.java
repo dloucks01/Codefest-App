@@ -1,6 +1,7 @@
 package com.majorscreations.kindergartenapp;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,8 +21,14 @@ import java.util.Collections;
 
 public class MatchNumberToGroupFragment extends Fragment {
 
+<<<<<<< HEAD
     final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
     int firstEntry, secondEntry, thirdEntry, fourthEntry, fifthEntry, counter;
+=======
+
+    private SharedPreferences sharedPref;
+    int firstEntry, secondEntry, thirdEntry, fourthEntry, fifthEntry;
+>>>>>>> 8b77f0a65c5d424f8ffb95fd9ae70eec6c5619ed
 
 
     private EditText number1;       // The five numbers that will be clicked.
@@ -37,8 +44,11 @@ public class MatchNumberToGroupFragment extends Fragment {
          * Inflate the layout for this fragment
          */
 
+        sharedPref  = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
         final View fragmentView = inflater.inflate(
                 R.layout.fragment_match_number_to_group, container, false);
+<<<<<<< HEAD
         number1 = (EditText) fragmentView.findViewById(R.id.inputOne);
         number2 = (EditText) fragmentView.findViewById(R.id.inputTwo);
         number3 = (EditText) fragmentView.findViewById(R.id.inputThree);
@@ -53,14 +63,36 @@ public class MatchNumberToGroupFragment extends Fragment {
 
         if (firstEntry == 4 && secondEntry == 1 && thirdEntry == 3 && fourthEntry == 2 && fifthEntry == 5) {
             Log.i(getClass().getSimpleName(), "Correct");
+=======
+
+        number1 = (EditText)fragmentView.findViewById(R.id.inputOne);
+        number2 = (EditText)fragmentView.findViewById(R.id.inputTwo);
+        number3 = (EditText)fragmentView.findViewById(R.id.inputThree);
+        number4 = (EditText)fragmentView.findViewById(R.id.inputFour);
+        number5 = (EditText)fragmentView.findViewById(R.id.inputFive);
+
+>>>>>>> 8b77f0a65c5d424f8ffb95fd9ae70eec6c5619ed
+
+        final Button completeButton = (Button)fragmentView.findViewById(R.id.completeButton);
+        completeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                firstEntry = Integer.parseInt(number1.getText().toString());
+                secondEntry = Integer.parseInt(number2.getText().toString());
+                thirdEntry = Integer.parseInt(number3.getText().toString());
+                fourthEntry = Integer.parseInt(number4.getText().toString());
+                fifthEntry = Integer.parseInt(number5.getText().toString());
+
+                if(firstEntry == 4 && secondEntry == 1 && thirdEntry == 3 && fourthEntry == 2 && fifthEntry == 5)
+                {
+                    Log.i(getClass().getSimpleName(), "Correct");
 
 
-            Integer right = sharedPref.getInt("key5", 0);
-            Integer total = sharedPref.getInt("key7", 0);
+                    Integer right = sharedPref.getInt("key5", 0);
+                    Integer total = sharedPref.getInt("key7", 0);
 
-            right += 1;
-            total += 1;
-
+<<<<<<< HEAD
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("key5", right);
             editor.putInt("key7", total);
@@ -68,21 +100,43 @@ public class MatchNumberToGroupFragment extends Fragment {
         } else {
             Integer wrong = sharedPref.getInt("key6", 0);
             Integer total = sharedPref.getInt("key7", 0);
+=======
+                    right += 1;
+                    total += 1;
 
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt("key6", wrong);
-            editor.putInt("key7", total);
-            editor.commit();
-            Log.i(getClass().getSimpleName(), "Incorrect");
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putInt("key5", right);
+                    editor.putInt("key7", total);
+                    editor.commit();
+                }
+>>>>>>> 8b77f0a65c5d424f8ffb95fd9ae70eec6c5619ed
+
+                else {
+                    Integer wrong = sharedPref.getInt("key6", 0);
+                    Integer total = sharedPref.getInt("key7", 0);
+
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putInt("key6", wrong);
+                    editor.putInt("key7", total);
+                    editor.commit();
+                    Log.i(getClass().getSimpleName(), "Incorrect");
 
 
-        }
-
+<<<<<<< HEAD
         final Button completeButton = (Button) fragmentView.findViewById(R.id.completeButton);
         completeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+=======
+                }
+>>>>>>> 8b77f0a65c5d424f8ffb95fd9ae70eec6c5619ed
 
+                MatchNumberToGroupFragment fragment = new MatchNumberToGroupFragment();
+                getFragmentManager().beginTransaction()
+                        .replace(((ViewGroup) getView().getParent()).getId(), fragment)
+                        .setTransition(FragmentTransaction.TRANSIT_EXIT_MASK)
+                        .addToBackStack(null)
+                        .commit();
 
             }
         });

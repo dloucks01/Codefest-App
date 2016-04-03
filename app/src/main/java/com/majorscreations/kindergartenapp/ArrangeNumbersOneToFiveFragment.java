@@ -1,13 +1,17 @@
 package com.majorscreations.kindergartenapp;
 
 import android.app.Fragment;
+<<<<<<< HEAD
 import android.app.FragmentManager;
+=======
+>>>>>>> 8b77f0a65c5d424f8ffb95fd9ae70eec6c5619ed
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -112,9 +116,12 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
                     editor.putInt("key7", total);
                     editor.putInt("flag1", 1);
                     editor.commit();
+<<<<<<< HEAD
                     Intent intent = new Intent(getActivity(), OutputActivity.class);
                     startActivity(intent);
 
+=======
+>>>>>>> 8b77f0a65c5d424f8ffb95fd9ae70eec6c5619ed
                 } else {
 
 
@@ -132,7 +139,16 @@ public class ArrangeNumbersOneToFiveFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), OutputActivity.class);
                     startActivity(intent);
                     Log.i(getClass().getSimpleName(), "Incorrect");
+
                 }
+                MatchNumberToGroupFragment fragment = new MatchNumberToGroupFragment();
+                getFragmentManager().beginTransaction()
+                        .replace(((ViewGroup) getView().getParent()).getId(), fragment)
+                        .setTransition(FragmentTransaction.TRANSIT_EXIT_MASK)
+                        .addToBackStack(null)
+                        .commit();
+
+
             }
         }
     }

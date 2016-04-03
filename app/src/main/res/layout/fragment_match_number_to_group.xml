@@ -18,56 +18,72 @@
         android:layout_margin="25dp" />
 
     <EditText
-        android:layout_width="30dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/inputOne"
         android:imeOptions="actionNext"
-        android:foreground="#e4e4e4"
+        android:inputType="number"
+        android:elevation="5dp"
+        android:textColor="#000000"
         android:layout_above="@+id/oneBug"
+        android:maxLength="1"
         android:layout_alignLeft="@+id/nmbrToGroupTitle"
         android:layout_alignStart="@+id/nmbrToGroupTitle" />
 
     <EditText
-        android:layout_width="30dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/inputTwo"
         android:imeOptions="actionNext"
+        android:inputType="number"
+        android:maxLength="1"
         android:layout_above="@+id/inputThree"
         android:layout_alignLeft="@+id/inputOne"
         android:layout_alignStart="@+id/inputOne"
         android:layout_marginBottom="16dp"
-        android:foreground="#e4e4e4" />
+        android:textColor="#000000"
+        android:elevation="4dp" />
 
     <EditText
-        android:layout_width="30dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/inputThree"
+        android:inputType="number"
         android:imeOptions="actionNext"
+        android:maxLength="1"
         android:layout_above="@+id/twoBug"
         android:layout_alignLeft="@+id/inputTwo"
         android:layout_alignStart="@+id/inputTwo"
-        android:foreground="#e4e4e4" />
+        android:textColor="#000000"
+        android:elevation="4dp" />
 
     <EditText
-        android:layout_width="30dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/inputFour"
+        android:inputType="number"
+        android:maxLength="1"
         android:imeOptions="actionNext"
         android:layout_alignBottom="@+id/twoBug"
         android:layout_alignLeft="@+id/inputThree"
         android:layout_alignStart="@+id/inputThree"
-        android:foreground="#e4e4e4" />
+        android:textColor="#000000"
+        android:elevation="4dp" />
 
     <EditText
-        android:layout_width="30dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:id="@+id/inputFive"
+        android:maxLength="1"
         android:layout_marginBottom="129dp"
+        android:inputType="number"
         android:imeOptions="actionNext"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/inputFour"
         android:layout_alignStart="@+id/inputFour"
-        android:foreground="#e4e4e4" />
+        android:textColor="#000000"
+        android:elevation="4dp"
+ />
 
     <ImageView
         android:layout_width="160dp"
